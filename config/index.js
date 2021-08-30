@@ -1,14 +1,13 @@
 module.exports = {
   //-- SITE SETTINGS -----
-  author: "@konstantinmuenster",
+  author: "@mfvil",
   siteTitle: "Roman Web Dev",
-  siteShortTitle: "", // Used as logo text in header, footer, and splash screen
+  //siteShortTitle: "Roman's web dev portfolio", // Used as logo text in header, footer, and splash screen
   siteDescription:
     "Roman's web dev Portfolio",
   siteUrl: "https://rarefyev.com",
   siteLanguage: "en_US",
-  siteIcon: "", // Relative to gatsby-config file
-  seoTitleSuffix: "", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
+  //seoTitleSuffix: "", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
   useCookieBar: true, // If you use Google Analytics and want to be GDPR-compliant, set it to true
   googleAnalyticsTrackingId: "UA-122673725-1", // e.g. UA-XXXXXX-X
 

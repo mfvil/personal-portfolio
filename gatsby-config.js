@@ -3,7 +3,6 @@ const {
   siteTitle,
   siteShortTitle,
   siteDescription,
-  siteIcon,
   siteUrl,
   googleAnalyticsTrackingId,
   colors,
@@ -37,18 +36,18 @@ module.exports = {
         environments: ["production"], // defines the environments where the tracking should be available
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: siteTitle,
-        short_name: siteShortTitle,
-        start_url: `/`,
-        background_color: colors.lightTheme.background,
-        theme_color: colors.lightTheme.primary,
-        display: `minimal-ui`,
-        icon: siteIcon, // This path is relative to the root of the site.
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: siteTitle,
+    //     short_name: siteShortTitle,
+    //     start_url: `/`,
+    //     background_color: colors.lightTheme.background,
+    //     theme_color: colors.lightTheme.primary,
+    //     display: `minimal-ui`,
+    //     icon: 'src/images/icon.png', // This path is relative to the root of the site.
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
