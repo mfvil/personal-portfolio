@@ -1,26 +1,19 @@
 module.exports = {
-  parser: "@babel/eslint-parser",
-  parserOptions: {
-    sourceType: "module",
-    requireConfigFile: false,
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-  extends: ["plugin:react/recommended", "plugin:prettier/recommended"],
-  settings: {
-    react: {
-      version: "detect",
-    },
-  },
+  extends: ['airbnb', 'prettier'],
+  plugins: ['prettier'],
   env: {
     browser: true,
-    node: true,
     es6: true,
   },
-  plugins: ["@babel", "react", "react-hooks", "prettier"],
   rules: {
-    "prettier/prettier": "error",
-    "react/no-find-dom-node": "off",
+    'import/no-extraneous-dependencies': 'off',
+    'prettier/prettier': 'error',
+    'no-console': 'warn',
+    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-filename-extension': 'off', // disable if necessary
+    'react/static-property-placement': 'off', // disable if necessary
+    'react/jsx-props-no-spreading': 'off', // disable if necessary
+    'react/require-default-props': 'off',
   },
-}
+  parser: 'babel-eslint',
+};

@@ -1,86 +1,35 @@
-const {
-  author,
-  siteTitle,
-  siteShortTitle,
-  siteDescription,
-  siteUrl,
-  googleAnalyticsTrackingId,
-  colors,
-} = require(`./config`)
-
 module.exports = {
-  siteMetadata: {
-    author: author,
-    title: siteTitle,
-    description: siteDescription,
-    siteUrl: siteUrl,
-  },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify`,
     {
-      resolve: `gatsby-plugin-gdpr-cookies`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        googleAnalytics: {
-          trackingId: googleAnalyticsTrackingId,
-          cookieName: "gatsby-gdpr-google-analytics",
-          anonymize: true,
-          allowAdFeatures: false,
-        },
-        environments: ["production"], // defines the environments where the tracking should be available
-      },
-    },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: siteTitle,
-    //     short_name: siteShortTitle,
-    //     start_url: `/`,
-    //     background_color: colors.lightTheme.background,
-    //     theme_color: colors.lightTheme.primary,
-    //     display: `minimal-ui`,
-    //     icon: 'src/images/icon.png', // This path is relative to the root of the site.
-    //   },
-    // },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1000,
-              quality: 80,
-            },
-          },
-        ],
+        name: `images`,
+        path: `${__dirname}/src/images/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content`,
-        name: `content`,
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
       },
     },
     {
-      resolve: `gatsby-plugin-eslint`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|.cache|public)/,
-        stages: [`develop`],
-        options: {
-          emitWarning: true,
-          failOnError: false,
-        },
+        name: `Gatsby Simplefolio`,
+        short_name: `Simplefolio`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#02aab0`,
+        display: `standalone`,
+        icon: 'src/images/favicon.png',
       },
     },
   ],
-}
+};

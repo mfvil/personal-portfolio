@@ -1,55 +1,43 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react';
+import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
+import { Container } from 'react-bootstrap';
+import Fade from 'react-reveal/Fade';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import GlobalStateProvider from "../context/provider"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import ContentWrapper from "../styles/contentWrapper"
+import { headData } from '../mock/data';
+import '../style/main.scss';
 
-const StyledSection = styled.section`
-  width: 100%;
-  max-width: 62.5rem;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-  height: auto;
-  background: ${({ theme }) => theme.colors.background};
-  h1 {
-    font-size: 1.5rem;
-  }
-`
-
-const StyledContentWrapper = styled(ContentWrapper)`
-  && {
-    width: 100%;
-    max-width: 36rem;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-`
-
-const NotFoundPage = () => {
-  const globalState = {
-    isIntroDone: true,
-    darkMode: false,
-  }
+export default () => {
+  const { lang } = headData;
 
   return (
-    <GlobalStateProvider initialState={globalState}>
-      <Layout>
-        <SEO
-          title="404: Not found"
-          meta={[{ name: "robots", content: "noindex" }]}
-        />
-        <StyledSection>
-          <StyledContentWrapper>
-            <h1 data-testid="heading">NOT FOUND</h1>
-            <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-          </StyledContentWrapper>
-        </StyledSection>
-      </Layout>
-    </GlobalStateProvider>
-  )
-}
-
-export default NotFoundPage
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Page not found</title>
+        <html lang={lang || 'en'} />
+        <meta name="description" content="Page not found" />
+      </Helmet>
+      <section id="hero" className="jumbotron">
+        <Container>
+          <Fade bottom duration={1000} delay={500} distance="30px">
+            <h1 className="hero-title text-center">
+              Sorry, this path does not exist{' '}
+              <span role="img" aria-label="emoji">
+                😞
+              </span>
+            </h1>
+          </Fade>
+          <Fade bottom duration={1000} delay={1000} distance="30px">
+            <p className="hero-cta justify-content-center">
+              <Link className="cta-btn cta-btn--hero" to="/">
+                Go back
+              </Link>
+            </p>
+          </Fade>
+        </Container>
+      </section>
+    </>
+  );
+};
