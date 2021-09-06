@@ -18,9 +18,9 @@ export const heroData = {
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpg',
-  paragraphOne: 'I do work for the state government with a focus on the Drupal CMS.',
+  paragraphOne: 'I work for the state government utilizing Drupal CMS to build user experiences.',
   paragraphTwo: 'I am very passionate about new technologies especially React and Gatsby.',
-  paragraphThree: 'In my free time i love playing disc golf and tinker with my PC build.',
+  paragraphThree: 'In my free time i love playing disc golf.',
   resume: '', // if no resume, the button will not show up
 };
 
