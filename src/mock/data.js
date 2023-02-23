@@ -11,16 +11,16 @@ export const headData = {
 export const heroData = {
   title: '',
   name: 'Roman',
-  subtitle: 'I am a Web Developer',
+  subtitle: 'I can build your next website',
   cta: 'About me',
 };
 
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpg',
-  paragraphOne: 'I work for the state government utilizing Drupal CMS to build user experiences.',
-  paragraphTwo: 'I am very passionate about new technologies especially React and Gatsby.',
-  paragraphThree: 'In my free time i love playing disc golf.',
+  paragraphOne: 'Im a freelancer web developer based in the Austin texas area.',
+  paragraphTwo: 'I have experience with React, Gatsby, Drupal, and Wordpress.',
+  paragraphThree: 'Work with me to build your next website!',
   resume: '', // if no resume, the button will not show up
 };
 
@@ -48,9 +48,9 @@ export const projectsData = [
 
 // CONTACT DATA
 export const contactData = {
-  cta: 'Email',
+  cta: 'Interested in working together?',
   btn: '',
-  email: 'mfvil@protonmail.com',
+  email: 'rarefyev@gmail.com',
 };
 
 // FOOTER DATA
